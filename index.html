@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
+  
+  <!-- Preload Audio for faster start -->
+  <link rel="preload" href="assets/song.mp3" as="audio" />
 </head>
 <body>
   <!-- ░░ PARTICLE CANVAS ░░ -->
@@ -87,7 +90,7 @@
     </svg>
   </div>
 
-  <audio id="bgMusic" loop>
+  <audio id="bgMusic" loop preload="auto">
     <source src="assets/song.mp3" type="audio/mpeg" />
   </audio>
 
