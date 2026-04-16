@@ -1,0 +1,36 @@
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+button, a {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}

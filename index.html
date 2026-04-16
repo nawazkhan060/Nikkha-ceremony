@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zikra Fatima ♥ Tausif Lakha — Nikah Ceremony</title>
+  <meta name="description" content="You are warmly invited to the Nikah Ceremony of Zikra Fatima & Tausif Lakha on 9 May 2026." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <!-- ░░ PARTICLE CANVAS ░░ -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ░░ FLOATING PETALS CANVAS ░░ -->
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- ░░ GLOBAL FLORAL CORNERS ░░ -->
+  <div class="floral-corner floral-corner--tl" aria-hidden="true">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.22">
+        <ellipse cx="40" cy="90" rx="18" ry="9" fill="#E6C97A" transform="rotate(-30 40 90)"/>
+        <ellipse cx="55" cy="75" rx="18" ry="9" fill="#fff" transform="rotate(-60 55 75)"/>
+        <ellipse cx="25" cy="70" rx="16" ry="8" fill="#F5E9C0" transform="rotate(-10 25 70)"/>
+        <ellipse cx="65" cy="95" rx="14" ry="7" fill="#E6C97A" transform="rotate(-80 65 95)"/>
+        <circle cx="42" cy="82" r="7" fill="#D4AF37" opacity="0.5"/>
+        <ellipse cx="80" cy="50" rx="16" ry="8" fill="#fff" transform="rotate(-45 80 50)"/>
+        <ellipse cx="95" cy="65" rx="14" ry="7" fill="#F5E9C0" transform="rotate(-20 95 65)"/>
+        <circle cx="88" cy="58" r="5" fill="#D4AF37" opacity="0.4"/>
+        <!-- stems -->
+        <path d="M42 82 Q30 60 15 35" stroke="#D4AF37" stroke-width="1.2" fill="none" opacity="0.4"/>
+        <path d="M88 58 Q75 40 60 20" stroke="#D4AF37" stroke-width="1" fill="none" opacity="0.3"/>
+        <path d="M42 82 Q55 95 45 115" stroke="#D4AF37" stroke-width="0.8" fill="none" opacity="0.25"/>
+        <!-- small buds -->
+        <ellipse cx="22" cy="40" rx="8" ry="4" fill="#E6C97A" transform="rotate(-50 22 40)" opacity="0.6"/>
+        <ellipse cx="108" cy="30" rx="7" ry="3.5" fill="#fff" transform="rotate(-30 108 30)" opacity="0.5"/>
+        <ellipse cx="18" cy="115" rx="9" ry="4.5" fill="#F5E9C0" transform="rotate(10 18 115)" opacity="0.5"/>
+      </g>
+    </svg>
+  </div>
+  <div class="floral-corner floral-corner--br" aria-hidden="true">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.22" transform="rotate(180 100 100)">
+        <ellipse cx="40" cy="90" rx="18" ry="9" fill="#E6C97A" transform="rotate(-30 40 90)"/>
+        <ellipse cx="55" cy="75" rx="18" ry="9" fill="#fff" transform="rotate(-60 55 75)"/>
+        <ellipse cx="25" cy="70" rx="16" ry="8" fill="#F5E9C0" transform="rotate(-10 25 70)"/>
+        <ellipse cx="65" cy="95" rx="14" ry="7" fill="#E6C97A" transform="rotate(-80 65 95)"/>
+        <circle cx="42" cy="82" r="7" fill="#D4AF37" opacity="0.5"/>
+        <ellipse cx="80" cy="50" rx="16" ry="8" fill="#fff" transform="rotate(-45 80 50)"/>
+        <ellipse cx="95" cy="65" rx="14" ry="7" fill="#F5E9C0" transform="rotate(-20 95 65)"/>
+        <circle cx="88" cy="58" r="5" fill="#D4AF37" opacity="0.4"/>
+        <path d="M42 82 Q30 60 15 35" stroke="#D4AF37" stroke-width="1.2" fill="none" opacity="0.4"/>
+        <path d="M88 58 Q75 40 60 20" stroke="#D4AF37" stroke-width="1" fill="none" opacity="0.3"/>
+        <ellipse cx="22" cy="40" rx="8" ry="4" fill="#E6C97A" transform="rotate(-50 22 40)" opacity="0.6"/>
+        <ellipse cx="108" cy="30" rx="7" ry="3.5" fill="#fff" transform="rotate(-30 108 30)" opacity="0.5"/>
+      </g>
+    </svg>
+  </div>
+  <div class="floral-corner floral-corner--tr" aria-hidden="true">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.18" transform="scale(-1,1) translate(-200,0)">
+        <ellipse cx="40" cy="90" rx="18" ry="9" fill="#E6C97A" transform="rotate(-30 40 90)"/>
+        <ellipse cx="55" cy="75" rx="18" ry="9" fill="#fff" transform="rotate(-60 55 75)"/>
+        <ellipse cx="25" cy="70" rx="16" ry="8" fill="#F5E9C0" transform="rotate(-10 25 70)"/>
+        <ellipse cx="65" cy="95" rx="14" ry="7" fill="#E6C97A" transform="rotate(-80 65 95)"/>
+        <circle cx="42" cy="82" r="7" fill="#D4AF37" opacity="0.5"/>
+        <path d="M42 82 Q30 60 15 35" stroke="#D4AF37" stroke-width="1.2" fill="none" opacity="0.4"/>
+      </g>
+    </svg>
+  </div>
+  <div class="floral-corner floral-corner--bl" aria-hidden="true">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.18" transform="scale(1,-1) translate(0,-200)">
+        <ellipse cx="40" cy="90" rx="18" ry="9" fill="#E6C97A" transform="rotate(-30 40 90)"/>
+        <ellipse cx="55" cy="75" rx="18" ry="9" fill="#fff" transform="rotate(-60 55 75)"/>
+        <ellipse cx="25" cy="70" rx="16" ry="8" fill="#F5E9C0" transform="rotate(-10 25 70)"/>
+        <circle cx="42" cy="82" r="7" fill="#D4AF37" opacity="0.5"/>
+        <path d="M42 82 Q30 60 15 35" stroke="#D4AF37" stroke-width="1.2" fill="none" opacity="0.4"/>
+      </g>
+    </svg>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="assets/song.mp3" type="audio/mpeg" />
+  </audio>
+
+ <section class="hero" id="hero">
+
+   <!-- VIDEO TOP -->
+   <div class="hero-video-top">
+     <video autoplay muted loop playsinline id="heroIntroVideo">
+       <source src="assets/intro.mp4" type="video/mp4">
+     </video>
+   </div>
+
+   <!-- HERO CARD -->
+   <div class="hero__content" id="inviteCard">
+     <p class="hero__bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+     <p class="hero__bismillah-latin">Bismillah-ir-Rahman-ir-Raheem</p>
+
+     <h1 class="hero__names">
+       <span class="name-bride">Zikra Fatima</span>
+       <span class="hero__heart"><svg class="svg-heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+       <span class="name-groom">Tausif Lakha</span>
+     </h1>
+
+     <p class="hero__ceremony">Nikah Ceremony</p>
+
+     <button class="invite-btn" id="openInviteBtn">Open Invitation ↓</button>
+   </div>
+ </section>
+
+ <!-- INVITATION POPUP MODAL -->
+ <div id="invitationModal" class="modal" aria-hidden="true">
+   <div class="modal-content">
+     <span class="close-modal" id="closeModal">&times;</span>
+      <div class="modal-body">
+        <div class="modal__bismillah-wrap">
+          <p class="hero__bismillah modal__bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+          <p class="hero__bismillah-latin modal__bismillah-latin">Bismillah-ir-Rahman-ir-Raheem</p>
+        </div>
+        <p class="section__label">A Blessed Invitation</p>
+        
+        <div class="modal__couple-wrap">
+          <div class="modal__name">Zikra Fatima</div>
+          <div class="modal__heart-box">
+             <span class="modal__heart"><svg class="svg-heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+          </div>
+          <div class="modal__name">Tausif Lakha</div>
+        </div>
+
+        <div class="modal__divider">
+          <span class="divider-line"></span>
+          <span>✦</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <div class="modal__info-grid">
+          <div class="modal__info-item">
+            <div class="info-icon-wrap">
+              <svg class="modal-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <div class="info-text">
+              <strong>9 May 2026</strong>
+              <p>Saturday</p>
+            </div>
+          </div>
+          <div class="modal__info-item">
+            <div class="info-icon-wrap">
+              <svg class="modal-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="info-text">
+              <strong>After Namaz-e-Asar</strong>
+              <p>Post Afternoon Prayer</p>
+            </div>
+          </div>
+          <div class="modal__info-item">
+            <div class="info-icon-wrap">
+              <svg class="modal-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="info-text">
+              <strong>Sarah Celebration</strong>
+              <p>Venue</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="modal__note">"May Allah bless their union and fill their home with love and happiness."</p>
+
+        <button class="map-btn" id="exploreBtn">Close & Explore</button>
+      </div>
+   </div>
+ </div>
+
+  <!-- ░░ INVITATION SECTION░░ -->
+  <section class="invitation" id="invitation">
+    <!-- Arch mihrab shape -->
+    <div class="invitation__arch" aria-hidden="true"></div>
+    <div class="invitation__ornament top">❧</div>
+
+    <div class="invitation__content">
+      <p class="invitation__label reveal-word">With the blessings of Allah</p>
+
+      <div class="invitation__divider">
+        <span class="divider-line"></span>
+        <span>✦</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <p class="invitation__text reveal-text">
+        Fatima Family and Lakha Family<br />
+        warmly invite you to join and bless<br />
+        the newly married couple.
+      </p>
+
+      <div class="invitation__names-display">
+        <span class="invite-name">Zikra Fatima</span>
+        <span class="invite-amp">&amp;</span>
+        <span class="invite-name">Tausif Lakha</span>
+      </div>
+
+      <p class="invitation__dua reveal-text">
+        <em>May Allah bless their union and fill their home<br />
+        with love, mercy, and happiness.</em>
+      </p>
+    </div>
+
+    <div class="invitation__ornament bottom">❦</div>
+  </section>
+
+  <!-- ░░ EVENT DETAILS SECTION ░░ -->
+  <section class="details" id="details">
+    <!-- Faint Islamic geometric pattern -->
+    <div class="details__pattern" aria-hidden="true"></div>
+
+    <div class="section__header">
+      <p class="section__label">You are cordially invited</p>
+      <h2 class="section__title">Event Details</h2>
+      <div class="section__divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond">◆</span>
+        <span class="divider-line"></span>
+      </div>
+    </div>
+
+    <div class="details__cards">
+      <div class="detail-card" data-delay="0">
+        <div class="card__glow"></div>
+        <div class="card__shimmer"></div>
+        <div class="card__icon"><svg class="detail-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+        <h3 class="card__label">Date</h3>
+        <p class="card__value">9 May 2026</p>
+        <p class="card__sub">Saturday</p>
+      </div>
+
+      <div class="detail-card" data-delay="150">
+        <div class="card__glow"></div>
+        <div class="card__shimmer"></div>
+        <div class="card__icon"><svg class="detail-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+        <h3 class="card__label">Time</h3>
+        <p class="card__value">After Namaz-e-Asar</p>
+        <p class="card__sub">Post Afternoon Prayer</p>
+      </div>
+
+      <div class="detail-card" data-delay="300">
+        <div class="card__glow"></div>
+        <div class="card__shimmer"></div>
+        <div class="card__icon"><svg class="detail-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+        <h3 class="card__label">Venue</h3>
+        <p class="card__value">Sarah Celebration</p>
+        <p class="card__sub">Venue</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ COUNTDOWN SECTION ░░ -->
+  <section class="countdown" id="countdown">
+    <div class="countdown__bg-text">09.05.2026</div>
+    <div class="countdown__sunray" aria-hidden="true"></div>
+    <div class="section__header">
+      <p class="section__label">Counting down to</p>
+      <h2 class="section__title">The Blessed Day</h2>
+    </div>
+    <div class="countdown__timer" id="countdownTimer">
+      <div class="countdown__unit">
+        <span class="count-num" id="days">00</span>
+        <span class="count-label">Days</span>
+      </div>
+      <span class="count-sep">:</span>
+      <div class="countdown__unit">
+        <span class="count-num" id="hours">00</span>
+        <span class="count-label">Hours</span>
+      </div>
+      <span class="count-sep">:</span>
+      <div class="countdown__unit">
+        <span class="count-num" id="minutes">00</span>
+        <span class="count-label">Minutes</span>
+      </div>
+      <span class="count-sep">:</span>
+      <div class="countdown__unit">
+        <span class="count-num" id="seconds">00</span>
+        <span class="count-label">Seconds</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ MAP SECTION ░░ -->
+  <section class="map-section" id="location">
+    <div class="section__header">
+      <p class="section__label">Find us at</p>
+      <h2 class="section__title">Venue Location</h2>
+      <div class="section__divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond">◆</span>
+        <span class="divider-line"></span>
+      </div>
+    </div>
+
+    <div class="map-section__wrapper">
+      <div class="map-section__frame">
+        <iframe
+          src="https://www.google.com/maps?q=Sarah+Celebration+Venue&output=embed"
+          width="100%"
+          height="320"
+          style="border:0; border-radius:12px;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sarah Celebration Venue Location"
+        ></iframe>
+      </div>
+
+      <div class="map-section__info">
+        <div class="venue-name">
+          <span class="venue-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+          <div>
+            <strong>Sarah Celebration Venue</strong>
+            <p>9 May 2026 · After Namaz-e-Asar</p>
+          </div>
+        </div>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Sarah+Celebration+Venue"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-btn"
+        >
+          Open in Google Maps ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer" id="footer">
+    <div class="footer__glow"></div>
+    <div class="footer__islamic-pattern" aria-hidden="true"></div>
+
+    <div class="footer__ornament">❧</div>
+
+    <div class="footer__names">
+      <span>Zikra Fatima</span>
+      <span class="footer__heart"><svg class="svg-heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+      <span>Tausif Lakha</span>
+    </div>
+
+    <p class="footer__date">9 May 2026</p>
+
+    <div class="footer__divider">
+      <span class="divider-line"></span>
+      <span class="divider-diamond">◆</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <p class="footer__dua">
+      <em>جَزَاكَ اللَّهُ خَيْرًا</em><br />
+      <span>May Allah reward you with goodness</span>
+    </p>
+
+    <p class="footer__credit">Made with love · Fatima &amp; Lakha Families</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

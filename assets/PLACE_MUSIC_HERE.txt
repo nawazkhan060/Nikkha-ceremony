@@ -1,0 +1,16 @@
+Place your background music file here as:
+
+    music.mp3
+
+The music toggle button in the website will automatically play this file.
+
+Suggested sources for royalty-free nasheed/anasheed:
+- YouTube Audio Library (free)
+- FreeSound.org (search "nasheed instrumental")
+- Zedge (mobile app)
+- SoundCloud (free downloads)
+
+File requirements:
+- Format: MP3
+- Name: music.mp3 (exact filename)
+- Recommended duration: 3-5 minutes (it loops automatically)
