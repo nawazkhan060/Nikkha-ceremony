@@ -97,32 +97,31 @@
   const exploreBtn    = document.getElementById('exploreBtn');
   const modal         = document.getElementById('invitationModal');
 
-  function closeModalAction() {
+  function closeModal() {
     if (!modal) return;
     modal.style.display = 'none';
     document.body.style.overflow = ''; // Restore scrolling
   }
 
   if (openModalBtn && modal) {
-    openModalBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
+    openModalBtn.addEventListener('click', () => {
       modal.style.display = 'block';
-      document.body.style.overflow = 'hidden'; 
+      document.body.style.overflow = 'hidden'; // Prevent scrolling background
     });
   }
 
   if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', closeModalAction);
+    closeModalBtn.addEventListener('click', closeModal);
   }
 
   if (exploreBtn) {
-    exploreBtn.addEventListener('click', closeModalAction);
+    exploreBtn.addEventListener('click', closeModal);
   }
 
   // Close modal when clicking outside content
   window.addEventListener('click', (e) => {
     if (e.target === modal) {
-      closeModalAction();
+      closeModal();
     }
   });
 
