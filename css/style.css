@@ -193,14 +193,7 @@ body::before {
 /* ===== SOFT LIGHT OVERLAY (VEIL FEEL) ===== */
 
 /* ===== CONTENT ABOVE ALL ===== */
-.hero__content {
-  background: #ffffff; /* solid, not transparent */
-  border-radius: 20px;
-  padding: 40px;
-
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-  border: 1px solid rgba(212,175,55,0.2);
-}
+/* Content defined below at line 254 */
 
 /* ===== TEXT ENHANCEMENT ===== */
 .hero__names {
@@ -254,20 +247,21 @@ body::before {
 .hero__content {
   text-align: center;
   max-width: 580px;
-  width: 100%;
+  width: 90%;
   position: relative;
   z-index: 3;
-  /* Glass card effect */
-  background: rgba(255, 252, 248, 0.62);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(212,175,55,0.18);
+  /* Premium Glassmorphism */
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(212,175,55,0.25);
   border-radius: var(--radius-lg);
-  padding: 44px 40px 48px;
+  padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 40px);
   box-shadow:
-    0 4px 40px rgba(212,175,55,0.10),
-    0 1px 0 rgba(255,255,255,0.9) inset,
-    0 -1px 0 rgba(212,175,55,0.1) inset;
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 4px 20px rgba(212,175,55,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  margin: 0 auto;
 }
 
 .hero__bismillah {
@@ -1019,6 +1013,43 @@ body::before {
   letter-spacing: 3px;
   color: rgba(248,246,242,0.28);
   text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.footer__nashthetics {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(212,175,55,0.7);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.footer__nashthetics a {
+  color: var(--gold-light);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer__nashthetics a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-light);
+  transition: width 0.3s ease;
+}
+
+.footer__nashthetics a:hover {
+  color: var(--white);
+  text-shadow: 0 0 10px rgba(230,201,122,0.5);
+}
+
+.footer__nashthetics a:hover::after {
+  width: 100%;
 }
 
 /* ============================================================
@@ -1219,25 +1250,31 @@ body {
   object-fit: cover;
 }
 .invite-btn {
-  border: 1px solid #d4af37;
-  color: #d4af37;
-  background: transparent;
-
-  padding: 12px 26px;
-  border-radius: 30px;
-
-  font-size: 14px;
-  letter-spacing: 1px;
-
+  border: 1.5px solid var(--gold);
+  color: var(--gold-dark);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s var(--transition-spring);
+  box-shadow: 0 4px 15px rgba(212,175,55,0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* HOVER EFFECT */
 .invite-btn:hover {
-  background: #d4af37;
-  color: white;
-  box-shadow: 0 10px 20px rgba(212,175,55,0.3);
+  background: var(--gold);
+  color: var(--white);
+  box-shadow: 0 12px 30px rgba(212,175,55,0.4);
+  transform: translateY(-3px);
 }
 
 /* --- MODAL / POPUP STYLES --- */
@@ -1257,21 +1294,25 @@ body {
 
 .modal-content {
   background: var(--ivory);
-  background-image: radial-gradient(circle at 2px 2px, rgba(212,175,55,0.03) 1px, transparent 0);
-  background-size: 24px 24px;
-  margin: 5% auto;
-  padding: 40px 30px 40px; /* Adjusted padding */
+  background-image: 
+    linear-gradient(rgba(212,175,55,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  margin: 5vh auto;
+  padding: 50px 24px 40px;
   border: 1px solid var(--gold);
-  width: 95%;
-  max-width: 540px;
+  width: 90%;
+  max-width: 500px;
   border-radius: var(--radius-lg);
   box-shadow: 
-    0 30px 90px rgba(0,0,0,0.45),
-    0 0 0 8px rgba(212,175,55,0.03);
+    0 40px 100px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(212,175,55,0.2),
+    inset 0 0 60px rgba(212,175,55,0.05);
   position: relative;
   text-align: center;
-  animation: modalScaleUp 0.7s var(--transition-spring);
-  overflow: hidden;
+  animation: modalScaleUp 0.8s var(--transition-spring);
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
 .modal__bismillah-wrap {
@@ -1445,8 +1486,50 @@ body {
 }
 
 @media (max-width: 480px) {
+  .modal-content {
+    width: 92%;
+    padding: 40px 20px 30px;
+    margin: 4vh auto;
+  }
+  
   .modal__couple-wrap {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    margin: 25px 0;
+  }
+
+  .modal__name {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+  }
+
+  .modal__heart {
+    font-size: 28px;
+  }
+
+  .modal__info-grid {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .info-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .modal-svg-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .info-text strong {
+    font-size: 15px;
+  }
+
+  .modal__note {
+    font-size: 15px;
+    max-width: 95%;
+    margin-bottom: 25px;
   }
 }
